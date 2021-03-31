@@ -5,10 +5,10 @@ mod line;
 mod quad_bezier;
 
 pub use circle::circle;
-pub use cubic_bezier::{cubic_bezier, cubic_bezier_seg};
+pub use cubic_bezier::cubic_bezier;
 pub use ellipsis::ellipsis;
 pub use line::line;
-pub use quad_bezier::{quad_bezier, quad_bezier_seg};
+pub use quad_bezier::quad_bezier;
 
 #[test]
 fn test_me() {

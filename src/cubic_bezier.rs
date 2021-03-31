@@ -2,7 +2,7 @@ use crate::line;
 use crate::quad_bezier_seg;
 use math::Int2;
 
-pub fn cubic_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, p3: P, mut plot: F) {
+fn cubic_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, p3: P, mut plot: F) {
     fn fp(p: Int2) -> (f64, f64) {
         (p.x as f64, p.y as f64)
     }

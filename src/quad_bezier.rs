@@ -1,7 +1,7 @@
 use crate::line;
 use math::Int2;
 
-pub fn quad_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, mut plot: F) {
+fn quad_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, mut plot: F) {
     fn lp(p: Int2) -> (i64, i64) {
         (p.x as i64, p.y as i64)
     }
