@@ -1,5 +1,5 @@
 use crate::line;
-use crate::quad_bezier_seg;
+use crate::quad_bezier;
 use math::Int2;
 
 fn cubic_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, p3: P, mut plot: F) {
@@ -36,7 +36,7 @@ fn cubic_bezier_seg<P: Into<Int2>, F: FnMut(Int2)>(p0: P, p1: P, p2: P, p3: P, m
     if xa == 0.0 && ya == 0.0 {
         sx = floor((3.0 * x1 - x0 + 1.0) / 2.0);
         sy = floor((3.0 * y1 - y0 + 1.0) / 2.0);
-        quad_bezier_seg(pt(x0, y0), pt(sx, sy), pt(x3, y3), plot);
+        quad_bezier(pt(x0, y0), pt(sx, sy), pt(x3, y3), plot);
         return;
     }
 
